@@ -18,9 +18,9 @@ public class MainApplication {
     }
 
     public static String petSpeaks(Pet[] pets) {
-        String results = "";
+        StringBuilder results = new StringBuilder();
         for (Pet pet : pets)
-        results += String.format("%s the %s says\n\t%s\n", pet.getName(), typeOfPetInString(pet), pet.speak());
+        results.append(String.format("%s the %s says\n\t%s\n", pet.getName(), typeOfPetInString(pet), pet.speak()));
         return results.substring(0, results.length() - 1);
     }
 
@@ -63,7 +63,7 @@ public class MainApplication {
         for (int i = 0; i < amount; i++) {
             System.out.println("What kind of pet is it? ");
             Pet pet = makePet(scanner.next());
-            System.out.println("What is the name ouf your pet? ");
+            System.out.println("What is the name of your pet? ");
             assert pet != null;
             pet.setName(scanner.next());
             numberOfPets[i] = pet;
